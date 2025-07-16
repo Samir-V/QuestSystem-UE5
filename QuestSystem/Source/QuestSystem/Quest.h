@@ -33,6 +33,12 @@ public:
 	UPROPERTY(EditAnywhere)
 	EQuestState QuestState = EQuestState::Locked;
 
+	UPROPERTY(EditAnywhere)
+	AQuestStep* CurrentQuestStep = nullptr;
+
+	void AdvanceQuest();
+	void CreateQuestStep();
+
 private:
 
 	UPROPERTY(EditAnywhere)

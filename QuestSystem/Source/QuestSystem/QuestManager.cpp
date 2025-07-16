@@ -3,3 +3,17 @@
 
 #include "QuestManager.h"
 
+#include "Quest.h"
+
+UQuest* UQuestManager::GetQuestByID(FName questId)
+{
+	for (UQuest* Quest : Quests)
+	{
+		if (Quest->QuestDataAsset->QuestID == questId)
+		{
+			return Quest;
+		}
+	}
+
+	return nullptr;
+}

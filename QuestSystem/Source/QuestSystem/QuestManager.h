@@ -24,4 +24,6 @@ class QUESTSYSTEM_API UQuestManager : public UGameInstanceSubsystem
 
 	UPROPERTY(EditAnywhere)
 	UQuest* ActiveQuest = nullptr;
+
+	UQuest* GetQuestByID(FName questId);
 };
