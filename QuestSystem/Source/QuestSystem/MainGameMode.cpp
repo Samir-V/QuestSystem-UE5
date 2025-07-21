@@ -3,3 +3,7 @@
 
 #include "MainGameMode.h"
 
+void AMainGameMode::StartPlay()
+{
+	Super::StartPlay();
+}

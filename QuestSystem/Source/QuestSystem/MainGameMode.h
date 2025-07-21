@@ -13,5 +13,6 @@ UCLASS()
 class QUESTSYSTEM_API AMainGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
-	
+
+	virtual void StartPlay() override;
 };

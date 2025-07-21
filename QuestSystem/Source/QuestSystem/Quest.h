@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "QuestDataAsset.h"
+#include "QuestStep.h"
 #include "UObject/NoExportTypes.h"
 #include "Quest.generated.h"
 

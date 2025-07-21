@@ -11,11 +11,25 @@ class UQuest;
  * 
  */
 
-UCLASS()
+UCLASS(Blueprintable)
 class QUESTSYSTEM_API UQuestManager : public UGameInstanceSubsystem
 {
 	GENERATED_BODY()
 
+	virtual void Initialize(FSubsystemCollectionBase& Collection) override;
+
+	void DelayedInit();
+
+	UFUNCTION()
+	void StartQuest(FName id);
+
+	UFUNCTION()
+	void AdvanceQuest(FName id);
+
+	UFUNCTION()
+	void FinishQuest(FName id);
+
+public:
 	UPROPERTY(EditAnywhere)
 	TSet<FName> CompletedQuestsID;
 
