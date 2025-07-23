@@ -5,6 +5,12 @@
 
 #include "QuestStep.h"
 
+void UQuest::Initialize(UQuestDataAsset* InDataAsset)
+{
+	QuestDataAsset = InDataAsset;
+}
+
+
 void UQuest::AdvanceQuest()
 {
 	++CurrentStepIndex_;

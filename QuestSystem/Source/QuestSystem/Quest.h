@@ -40,6 +40,8 @@ public:
 	void AdvanceQuest();
 	void CreateQuestStep();
 
+	void Initialize(UQuestDataAsset* InDataAsset);
+
 private:
 
 	UPROPERTY(EditAnywhere)
