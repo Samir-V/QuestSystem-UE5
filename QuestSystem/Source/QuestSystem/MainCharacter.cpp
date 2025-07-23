@@ -3,6 +3,7 @@
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
 #include "MainCharacter.h"
+#include "QuestActivationPoint.h"
 
 // Sets default values
 AMainCharacter::AMainCharacter()
@@ -52,6 +53,7 @@ void AMainCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 	{
 		EnhancedInput->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMainCharacter::Move);
 		EnhancedInput->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMainCharacter::Look);
+		EnhancedInput->BindAction(InteractAction, ETriggerEvent::Triggered, this, &AMainCharacter::Interact);
 	}
 }
 
@@ -72,4 +74,12 @@ void AMainCharacter::Look(const FInputActionValue& Value)
 	FVector2D LookAxis = Value.Get<FVector2D>();
 	AddControllerYawInput(LookAxis.X);
 	AddControllerPitchInput(-LookAxis.Y);
+}
+
+void AMainCharacter::Interact(const FInputActionValue& Value)
+{
+	if (CurrentQuestPoint)
+	{
+		CurrentQuestPoint->OnInteractTriggered();
+	}
 }

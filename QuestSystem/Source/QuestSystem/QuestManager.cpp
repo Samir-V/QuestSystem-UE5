@@ -59,6 +59,11 @@ void UQuestManager::DelayedInit()
 		FText questName = quest->QuestDataAsset->QuestName;
 		UE_LOG(LogTemp, Warning, TEXT("%s"), *questName.ToString());
 	}
+
+	for (UQuest* Quest : Quests)
+	{
+		eventRouter->TriggerQuestStateChange(Quest);	
+	}
 }
 
 
